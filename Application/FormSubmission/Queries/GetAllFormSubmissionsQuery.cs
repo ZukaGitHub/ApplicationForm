@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Application.FormSubmission.Queries
 {
-    public class GetAllFormSubmissionsQuery :IRequest<ResponseWrapper<FormSubmissionDTO>>
+    public class GetAllFormSubmissionsQuery :IRequest<ResponseWrapper<List<FormSubmissionDTO>>>
     {
     }
 }

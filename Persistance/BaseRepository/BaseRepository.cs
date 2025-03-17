@@ -38,7 +38,7 @@ namespace Persistance.BaseRepository
             return Task.FromResult(set);
         }
 
-        public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> expression) => _set.Where(expression);
+        public IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> expression, CancellationToken cancellationToken = default) => _set.Where(expression);
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             return await _context.SaveChangesAsync(cancellationToken);
