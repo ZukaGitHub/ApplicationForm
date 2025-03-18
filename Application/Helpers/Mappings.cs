@@ -26,7 +26,9 @@ namespace Application.Helpers
                 State = entity.State,
                 PostalCode = entity.PostalCode,
                 CountryAddress = entity.CountryAddress,
-                AdditionalProperties = entity.AdditionalProperties?.Select(ToDTO).ToList()
+                AdditionalProperties = entity.AdditionalProperties != null && entity.AdditionalProperties.Count() > 0
+                     ? entity.AdditionalProperties.Select(ToDTO).ToList()
+                            : null
             };
         }
 

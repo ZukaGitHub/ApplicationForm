@@ -85,7 +85,7 @@ namespace Application.Helpers
                 }
             }
 
-            model.AdditionalProperties = additionalProperties.Any() || additionalProperties.Count==0 ? additionalProperties : null;
+            model.AdditionalProperties =  additionalProperties.Count!=0 ? additionalProperties : null;
             return model;
         }
 

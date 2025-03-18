@@ -21,6 +21,10 @@ namespace Application.FormSubmission.Commands
                 };
 
             var normalizedModel = FormSubmissionNormalizer.Normalize(request.Inputs);
+            if(normalizedModel.AdditionalProperties==null || normalizedModel.AdditionalProperties?.Count==0)
+            {
+                normalizedModel.AdditionalProperties = null;
+            }
             await _unitOfWork.FormSubmissionRepository.AddAsync(normalizedModel, cancellationToken);
             var changes = await _unitOfWork.SaveAsync();
 

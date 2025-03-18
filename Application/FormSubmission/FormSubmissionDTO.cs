@@ -22,6 +22,6 @@ namespace Application.FormSubmission
         public string? State { get; set; }
         public string? PostalCode { get; set; }
         public string? CountryAddress { get; set; }
-        public List<AdditionalPropertiesDTO>? AdditionalProperties { get; set; }
+        public List<AdditionalPropertiesDTO?>? AdditionalProperties { get; set; }
     }
 }
