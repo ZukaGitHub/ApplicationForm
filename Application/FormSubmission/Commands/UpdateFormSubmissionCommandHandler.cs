@@ -16,7 +16,7 @@ namespace Application.FormSubmission.Commands
 
         public async Task<ResponseWrapper<FormSubmissionDTO>> Handle(UpdateFormSubmissionCommand request, CancellationToken cancellationToken)
         {
-            var entity = await _unitOfWork.FormSubmissionRepository.Where(f => f.Id == request.Id, cancellationToken).FirstOrDefaultAsync(cancellationToken);
+            var entity = await _unitOfWork.FormSubmissionRepository.Where(f => f.Id == request.Id,cancellationToken).FirstOrDefaultAsync(cancellationToken);
             if (entity == null)
                 return new ResponseWrapper<FormSubmissionDTO>
                 {
